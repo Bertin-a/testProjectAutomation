@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 
 describe('Checking',()=>{
-    it.skip('valid inputs', () => {
+    it('valid inputs', () => {
         cy.visit('http://localhost:3000/')
         cy.get('[data-test-id="first-name"]').type('Bertina')
         cy.get('[data-test-id="middle-name"]').type('Wewora')
@@ -13,7 +13,7 @@ describe('Checking',()=>{
         //user info
         cy.get('[data-test-id="user-info"]').should('exist')
     });
-    it.skip('invalid inputs for username', () => {
+    it('invalid inputs for username', () => {
         cy.visit('http://localhost:3000/')
         cy.get('[data-test-id="first-name"]').type('B')
         expect(cy.get('.sc-ifAKCX').should('contain', 'Must be between 2 and 10 chars'))
@@ -28,7 +28,7 @@ describe('Checking',()=>{
         cy.get('[data-test-id="submit-btn"]').click()
         cy.get('[data-test-id="user-info"]').should('not.exist')
     });
-    it.skip('invalid greater tha 10 chars', () => {
+    it('invalid greater tha 10 chars', () => {
          cy.visit('http://localhost:3000/')
         cy.get('[data-test-id="first-name"]').type('Bertinaaaaa')
         expect(cy.get('.sc-ifAKCX').should('contain', 'Must be between 2 and 10 chars'))
@@ -43,7 +43,7 @@ describe('Checking',()=>{
         cy.get('[data-test-id="submit-btn"]').click()
          cy.get('[data-test-id="user-info"]').should('not.exist')
      });
-      it.skip('invalid input for phone number', () => {
+      it('invalid input for phone number', () => {
         cy.visit('http://localhost:3000/')
         cy.get('[data-test-id="first-name"]').type('Bertinaaaaa')
         expect(cy.get('.sc-ifAKCX').should('contain', 'Must be between 2 and 10 chars'))
@@ -57,8 +57,7 @@ describe('Checking',()=>{
         cy.get('[data-test-id="address"]').type('Gh34JB2')
         cy.get('[data-test-id="submit-btn"]').click()
         cy.get('[data-test-id="user-info"]').should('not.exist')
-
-     });
+    });
      
    
     
